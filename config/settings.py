@@ -45,7 +45,9 @@ INSTALLED_APPS = [
 
     # Third party
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    "drf_spectacular",
+    "drf_spectacular_sidecar",
 
     #local apps
     'users',
