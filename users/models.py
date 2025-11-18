@@ -7,6 +7,7 @@ class User(AbstractUser):
         MANAGER = "MANAGER", "Manager"
         MEMBER = "MEMBER", "Member"
     role = models.CharField(max_length=20, choices=Roles.choices, default=Roles.MEMBER)
+    has_default_password = models.BooleanField(default=True)
 
     def is_admin(self):
         return self.role == self.Roles.ADMIN

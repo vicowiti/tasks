@@ -24,6 +24,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
     SpectacularRedocView,
 )
+from users.auth_views import CustomTokenObtainPairView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -31,6 +32,7 @@ urlpatterns = [
     path("api/auth/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/", include("users.urls")),
     path("api/", include("tasks.urls")),
+    path("api/auth/newpass/", CustomTokenObtainPairView.as_view(), name="newpass_token"),
 
     # Docs
      # OPENAPI SCHEMA

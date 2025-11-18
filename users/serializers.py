@@ -15,6 +15,7 @@ class UserSerializer(serializers.ModelSerializer):
         user = User(**validated_data)
         if password:
             user.set_password(password)
+            user.has_default_password = True
         else:
             user.set_unusable_password()
         user.save()
