@@ -14,6 +14,7 @@ class User(AbstractUser):
 
     def is_manager(self):
         return self.role == self.Roles.MANAGER
+    
 
     def is_member(self):
         return self.role == self.Roles.MEMBER
